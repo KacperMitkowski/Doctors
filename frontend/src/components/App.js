@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
+import DoctorsPagination from "./DoctorsPagination.js";
+import '../../static/css/main.css';
 
 class App extends Component {
   constructor(props) {
@@ -32,18 +34,33 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.data);
-    return (
-      <ul>
-        {this.state.data.map(contact => {
-          return (
-            <li key={contact.id}>
-              {contact.partner_id} - {contact.first_name} - {contact.last_name}
-            </li>
-          );
-        })}
-      </ul>
-    );
+    let data = this.state.data;
+    console.log(data)
+    if(data.doctors) {
+      return (
+          <div className='container'>
+            <div className='doctors-pagination'>
+              <DoctorsPagination
+                previous={data.previous}
+                actual={data.actual}
+                next={data.next}
+              />
+            </div>
+            <div className="doctors-list">
+              <ul>
+                {data.doctors.map(doctor => {
+                  return (
+                    <li key={doctor.id}>
+                      {doctor.partner_id} - {doctor.first_name} - {doctor.last_name}
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          </div>
+      );
+    }
+    return null;
   }
 }
 

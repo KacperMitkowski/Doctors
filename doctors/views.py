@@ -1,4 +1,5 @@
 import csv
+import math
 import re
 import pandas as pd
 from datetime import datetime
@@ -20,11 +21,18 @@ class Doctor_list(generics.ListCreateAPIView):
 
 
 def Doctor_list_page(request, page_nr=1):
-    items_per_page = 5
+    print("test")
+    items_per_page = 100
     from_element = page_nr * items_per_page - items_per_page
     to_element = items_per_page * page_nr
-    data = list(Doctor.objects.order_by('partner_id').values()[from_element:to_element])
-    return JsonResponse(data, safe=False)
+    how_many_pages = math.ceil(Doctor.objects.count() / items_per_page)
+    doctors = list(Doctor.objects.order_by('partner_id').values()[from_element:to_element])
+
+    return JsonResponse({'doctors' : doctors,
+                         'previous' : page_nr - 1,
+                         'actual' :page_nr,
+                         'next' : page_nr + 1,
+                         'how_many_pages' : how_many_pages})
 
 def load_data(request):
     with open("wspolnicy.csv", encoding='utf-8') as file:
