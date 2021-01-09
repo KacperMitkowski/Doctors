@@ -1,3 +1,7 @@
 .pagination {
     background-color: red;
 }
+
+.pagination-element {
+    padding: 25px;
+}
