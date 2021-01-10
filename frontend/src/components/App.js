@@ -63,7 +63,7 @@ class App extends Component {
                                     <td>{doctor['practice_description']}</td>
                                     <td>{dateToDisplay}</td>
                                     <td>
-                                        <i className="fa fa-spinner fa-spin"></i>
+                                        <button type="button" className="btn btn-info">Szczegóły</button>
                                     </td>
                                 </tr>
                             )

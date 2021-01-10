@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
-    "bootstrap": "^4.5.3"
+    "bootstrap": "^4.5.3",
+    "font-awesome": "^4.7.0"
   }
 }
