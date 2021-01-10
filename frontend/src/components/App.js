@@ -3,6 +3,7 @@ import { render } from "react-dom";
 import DoctorsPagination from "./DoctorsPagination.js";
 import '../../static/css/main.css';
 
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -23,8 +24,9 @@ class App extends Component {
     let doctors = this.state.doctors;
 
     if(doctors && doctors.length > 0) {
+      console.log(doctors);
       return (
-          <div className='container'>
+          <div>
               <DoctorsPagination
                 previousPage={this.state.nextPage}
                 actualPage={this.state.actualPage}
@@ -33,16 +35,41 @@ class App extends Component {
                 itemsPerPage={this.state.itemsPerPage}
                 updatePage={this.updatePage}
               />
-            <div className="doctors-list">
-              <ul>
-                {doctors.map(doctor => {
-                  return (
-                    <li key={doctor.id}>
-                      {doctor.partner_id} - {doctor.first_name} - {doctor.last_name}
-                    </li>
-                  );
-                })}
-              </ul>
+            <div className="table-container">
+                <table className='table table-sm table-bordered' style={{tableLayout: 'fixed'}}>
+                    <thead className='thead-dark'>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope='col'>Imię</th>
+                            <th scope='col'>Drugie imię</th>
+                            <th scope='col'>Nazwisko</th>
+                            <th scope='col'>Zawód opis</th>
+                            <th scope='col'>Data rozpoczęcia działalności</th>
+                            <th>&nbsp;</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {doctors.map((doctor, i) => {
+                            let startActivityDate = doctor['medicine_activity_start_date'];
+                            let d = new Date(Date.parse(startActivityDate));
+                            let dateToDisplay = `${d.getDate()}/${d.getMonth() + 1}/${d.getFullYear()}`
+
+                            return (
+                                <tr key={`doctor-${i}`}>
+                                    <th scope="row">{i + 1}</th>
+                                    <td>{doctor['first_name']}</td>
+                                    <td>{doctor['middle_name']}</td>
+                                    <td>{doctor['last_name']}</td>
+                                    <td>{doctor['practice_description']}</td>
+                                    <td>{dateToDisplay}</td>
+                                    <td>
+                                        <i className="fa fa-spinner fa-spin"></i>
+                                    </td>
+                                </tr>
+                            )
+                        })}
+                    </tbody>
+                </table>
             </div>
           </div>
       );

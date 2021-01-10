@@ -25,16 +25,18 @@ def Doctor_list_page(request, page_nr=1):
     from_element = page_nr * items_per_page - items_per_page
     to_element = items_per_page * page_nr
     how_many_pages = math.ceil(Doctor.objects.count() / items_per_page)
-    doctors = list(Doctor.objects.order_by('partner_id').values()[from_element:to_element])
+    doctors = list(Doctor.objects.order_by('last_name').values()[from_element:to_element])
 
     return JsonResponse({'doctors' : doctors,
                          'previous_page' : page_nr - 1,
                          'actual_page' :page_nr,
                          'next_page' : page_nr + 1,
                          'how_many_pages' : how_many_pages,
-                         'items_per_page' : items_per_page})
+                         'items_per_page' : items_per_page
+                         })
 
-def load_data(request):
+
+def load_doctors_to_db_from_csv(request):
     with open("wspolnicy.csv", encoding='utf-8') as file:
         reader = csv.reader(file, delimiter = ";")
         headers = next(reader)
@@ -59,4 +61,5 @@ def load_data(request):
                                              medicine_activity_end_date=None if "NULL" in row[16] else datetime.strptime(row[16], '%Y-%m-%d').date(),
                                              create_date=datetime.now()
                                              )
+
     return render(request, 'Kacper_Mitkowski_Rejestr_podmiotów_lekarskich/index.html')

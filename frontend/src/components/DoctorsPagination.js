@@ -12,7 +12,7 @@ class DoctorsPagination extends React.Component {
 
         if(actualPage > 6) {
             elements.push(
-                <div className="pagination-element" onClick={() => {this.props.updatePage(1)}}>
+                <div key={`arrow-back`} className="pagination-element" onClick={() => {this.props.updatePage(1)}}>
                     <span>&lt;&lt;&lt;</span>
                 </div>
             )
@@ -27,9 +27,9 @@ class DoctorsPagination extends React.Component {
                 )
             }
         }
-        if(actualPage !== howManyPages) {
+        if(actualPage !== howManyPages - 1) {
             elements.push(
-                <div className="pagination-element" onClick={() => {this.props.updatePage(howManyPages)}}>
+                <div key={`arrow-end`} className="pagination-element" onClick={() => {this.props.updatePage(howManyPages - 1)}}>
                     <span>&gt;&gt;&gt;</span>
                 </div>
             )
