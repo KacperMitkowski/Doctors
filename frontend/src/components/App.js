@@ -14,6 +14,7 @@ class App extends Component {
       actualPage: 1,
       nextPage: 2,
       howManyPages: 0,
+      itemsPerPage : 0,
       error: ''
     };
   }
@@ -24,15 +25,14 @@ class App extends Component {
     if(doctors && doctors.length > 0) {
       return (
           <div className='container'>
-            <div className='doctors-pagination'>
               <DoctorsPagination
                 previousPage={this.state.nextPage}
                 actualPage={this.state.actualPage}
                 nextPage={this.state.nextPage}
                 howManyPages={this.state.howManyPages}
+                itemsPerPage={this.state.itemsPerPage}
                 updatePage={this.updatePage}
               />
-            </div>
             <div className="doctors-list">
               <ul>
                 {doctors.map(doctor => {
@@ -66,7 +66,8 @@ class App extends Component {
                     previousPage: data.previous_page,
                     actualPage: data.actual_page,
                     nextPage: data.next_page,
-                    howManyPages: data.how_many_pages
+                    howManyPages: data.how_many_pages,
+                    itemsPerPage: data.items_per_page
                     })
         });
   }
@@ -86,7 +87,8 @@ class App extends Component {
                     previousPage: data.previous_page,
                     actualPage: data.actual_page,
                     nextPage: data.next_page,
-                    howManyPages: data.how_many_pages
+                    howManyPages: data.how_many_pages,
+                    itemsPerPage: data.items_per_page
                     })
         });
   }

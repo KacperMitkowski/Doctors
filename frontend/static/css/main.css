@@ -1,7 +1,14 @@
-.pagination {
+.doctors-pagination-bar-container {
     background-color: red;
+    display: flex;
 }
 
 .pagination-element {
     padding: 25px;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+
+.active-element {
+    background-color: yellow;
 }

@@ -21,7 +21,7 @@ class Doctor_list(generics.ListCreateAPIView):
 
 
 def Doctor_list_page(request, page_nr=1):
-    items_per_page = 5
+    items_per_page = 50
     from_element = page_nr * items_per_page - items_per_page
     to_element = items_per_page * page_nr
     how_many_pages = math.ceil(Doctor.objects.count() / items_per_page)
@@ -31,7 +31,8 @@ def Doctor_list_page(request, page_nr=1):
                          'previous_page' : page_nr - 1,
                          'actual_page' :page_nr,
                          'next_page' : page_nr + 1,
-                         'how_many_pages' : how_many_pages})
+                         'how_many_pages' : how_many_pages,
+                         'items_per_page' : items_per_page})
 
 def load_data(request):
     with open("wspolnicy.csv", encoding='utf-8') as file:
