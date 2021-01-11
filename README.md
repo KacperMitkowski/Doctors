@@ -20,6 +20,7 @@ The user is in the same route for whole the time. The data are taken from db by 
 - React.js
 - Babel, Webpack
 - HTML, CSS, Bootstrap
+- PyCharm as IDE
 
 ## Loading data:
 - there are 2 options which you can choose:
