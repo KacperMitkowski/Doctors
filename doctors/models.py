@@ -22,6 +22,9 @@ class Doctor(models.Model):
     medicine_activity_end_date = models.DateTimeField('Data zakończenia działalności', null=True, blank=True)
     create_date = models.DateTimeField(auto_now_add=True, null=True, blank=True)
 
+    def __str__(self):
+        return f'{self.first_name} {self.last_name} (specjalizacja: {self.specialisation if self.specialisation is not None else "brak"}, numer PWZ: {self.medical_licence_number} )'
+
 class Address(models.Model):
     address_id = models.CharField(max_length=100, null=True, blank=True)
     book_number = models.CharField(max_length=100, null=True, blank=True)
@@ -44,3 +47,6 @@ class Address(models.Model):
     street_code = models.CharField(max_length=100, null=True, blank=True)
     city = models.CharField(max_length=1000, null=True, blank=True)
     phone = models.CharField(max_length=100, null=True, blank=True)
+
+    def __str__(self):
+        return f'Nazwa zakładu: {self.medical_institution_name}, Ulica: {self.street}, Nr ulicy: {self.street_number}, Nr lokalu: {self.local_number}, Kod pocztowy: {self.zip_code}, Miasto: {self.phone}'
