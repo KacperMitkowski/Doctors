@@ -37,6 +37,14 @@ def doctor_list_page(request, page_nr=1):
                          })
 
 
+def doctor_details(request, doctor_id):
+    print(doctor_id)
+    addresses = list(Address.objects.filter(partner_id=doctor_id).values())
+    return JsonResponse({
+        'addresses': addresses
+    })
+
+
 def load_doctors_to_db_from_csv(request):
     with open("wspolnicy.csv", encoding='utf-8') as file:
         reader = csv.reader(file, delimiter = ";")

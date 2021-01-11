@@ -20,7 +20,11 @@ class App extends Component {
       itemsPerPage : 0,
       error: '',
       page: 'Index',
-      doctorId: null
+      doctorId: null,
+      firstName : null,
+      lastName: null,
+      specialisation: null,
+      medicalLicenceNumber: null
     };
   }
 
@@ -43,15 +47,15 @@ class App extends Component {
                       <div className="table-container">
                           <table className='table table-sm table-bordered' style={{tableLayout: 'fixed'}}>
                               <thead className='thead-dark'>
-                              <tr>
-                                  <th scope="col">#</th>
-                                  <th scope='col'>Imię</th>
-                                  <th scope='col'>Drugie imię</th>
-                                  <th scope='col'>Nazwisko</th>
-                                  <th scope='col'>Zawód opis</th>
-                                  <th scope='col'>Data rozpoczęcia działalności</th>
-                                  <th>&nbsp;</th>
-                              </tr>
+                                  <tr>
+                                      <th scope="col">#</th>
+                                      <th scope='col'>Imię</th>
+                                      <th scope='col'>Drugie imię</th>
+                                      <th scope='col'>Nazwisko</th>
+                                      <th scope='col'>Zawód opis</th>
+                                      <th scope='col'>Data rozpoczęcia działalności</th>
+                                      <th>&nbsp;</th>
+                                  </tr>
                               </thead>
                               <tbody>
                               {doctors.map((doctor, i) => {
@@ -70,7 +74,12 @@ class App extends Component {
                                           <td>
                                               <button onClick={() => this.setState({
                                                   'page': 'Details',
-                                                  'doctorId': doctor['id']
+                                                  'doctorId': doctor['partner_id'],
+                                                  'firstName' : doctor['first_name'],
+                                                  'lastName': doctor['last_name'],
+                                                  'specialisation': doctor['specialisation'],
+                                                  'medicalLicenceNumber': doctor['medical_licence_number']
+
                                               })} type="button"
                                                       className="btn btn-info">Szczegóły
                                               </button>
@@ -91,6 +100,10 @@ class App extends Component {
                     <DoctorDetails doctorId={this.state.doctorId}
                                    indexPage={this.state.actualPage}
                                    goToIndex={this.goToIndex}
+                                   firstName={this.state.firstName}
+                                   lastName={this.state.lastName}
+                                   specialisation={this.state.specialisation}
+                                   medicalLicenceNumber={this.state.medicalLicenceNumber}
                     />
                   )
           }
