@@ -4,7 +4,7 @@ This is simple application presenting information about doctors and medical inst
 
 ## About the project
 
-The project is SPA with Python, Django and Sqlite as backend and React.js in frontend with the use of webpack and babel. The content in the application is created dynamically. 
+The project is SPA with Python, Django and Sqlite as backend and React.js in frontend with the use of Webpack and Babel. The content in the application is created dynamically. 
 The user is in the same route for whole the time. The data are taken from db by requests prepared in React and handled in Django (in doctors/urls.py and doctors/views.py)
 
 **The goal was to:**
@@ -41,7 +41,7 @@ The user is in the same route for whole the time. The data are taken from db by 
 - connect with GUS / VIES server to get additional data
 - refine styles and add RWD rules by implementing more Bootstrap classes
 - add external libs to improve UI such as prime.ng
-- prepare documentation for other developers:
+- prepare documentation for other developers
 
 ## Screenshots:
   
