@@ -72,7 +72,7 @@ def load_doctor_addresses_from_csv(request):
         headers = next(reader)
         for row in reader:
             if not Address.objects.filter(address_id=row[0]).exists():
-                Doctor.objects.get_or_create(address_id=None if "NULL" in row[0] else row[0],
+                Address.objects.get_or_create(address_id=None if "NULL" in row[0] else row[0],
                                              book_number=None if "NULL" in row[1] else row[1],
                                              practice_type=None if "NULL" in row[2] else row[2],
                                              partner_id=None if "NULL" in row[3] else row[3],
