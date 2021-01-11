@@ -5,10 +5,11 @@ This is simple application presenting information about doctors and medical inst
 ## About the project
 
 The project is SPA with Python, Django and Sqlite as backend and React.js in frontend with the use of Webpack and Babel. The content in the application is created dynamically. 
-The user is in the same route for whole the time. The data are taken from db by requests prepared in React and handled in Django (in doctors/urls.py and doctors/views.py)
+The user is in the same route for whole the time. The data are taken from db by requests prepared in React and handled in Django (in doctors/urls.py and doctors/views.py). In addition it's possible to organise data by entering django admin panel (obviously you need to create superuser by pressing 'python manage.py createsuperuse') where you have all CRUD interface for the data.
 
 **The goal was to:**
 - practice backend skills with Python, Django and Sqlite
+- practice customizing Django admin page to current needs
 - practice frontend skills with React.js
 - get familiar with Webpack and Babel
 - practice gathering data from csv into db
@@ -44,4 +45,9 @@ The user is in the same route for whole the time. The data are taken from db by 
 - prepare documentation for other developers
 
 ## Screenshots:
-  
+Doctors Index page:
+![alt text](https://github.com/KacperMitkowski/Doctors/blob/master/screenshots/1.png)
+Doctor Details page:
+![alt text](https://github.com/KacperMitkowski/Doctors/blob/master/screenshots/2.png)
+Django admin page:
+![alt text](https://github.com/KacperMitkowski/Doctors/blob/master/screenshots/3.png)
