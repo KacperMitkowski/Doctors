@@ -90,6 +90,14 @@ class App extends Component {
                               </tbody>
                           </table>
                       </div>
+                      <DoctorsPagination
+                          previousPage={this.state.nextPage}
+                          actualPage={this.state.actualPage}
+                          nextPage={this.state.nextPage}
+                          howManyPages={this.state.howManyPages}
+                          itemsPerPage={this.state.itemsPerPage}
+                          updatePage={this.updatePage}
+                      />
                   </div>
               );
           }
