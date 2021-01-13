@@ -40,33 +40,32 @@ The user is in the same route for whole the time. The data are taken from db by 
         </ul>
     </li>
     <li>
-        
+        Windows -> Make following steps in this order:
+        <ul>
+            <li>
+                Run following instructions in Windows CMD
+                <ol>
+                    <li>git clone https://github.com/KacperMitkowski/Doctors</li>
+                    <li>cd Doctors</li>
+                    <li>py -m venv venv</li>
+                    <li>.\venv\Scripts\activate</li>
+                    <li>pip install -r requirements.txt</li>
+                </ol>
+            </li>
+            <li>Then you need to extract db file 'db_dump_sqlite.7z' in the root folder (for example with the zip program)</li>
+            <li>   
+                Go back to CMD and make following instructions:
+                <ol>
+                    <li>cd frontend</li>
+                    <li>npm install (in case npm is not installed you can download it from here 'https://phoenixnap.com/kb/install-node-js-npm-on-windows')</li>
+                    <li>cd ..</li>
+                    <li>python manage.py runserver</li>
+                </ol>
+            </li>
+        </ul>
     </li>
 </ol>
-1. Linux:
-    Run following instructions in Linux terminal:
-        a) git clone https://github.com/KacperMitkowski/Doctors
-        b) cd Doctors
-        c) python3 -m venv venv
-        d) source venv/bin/activate
-        e) pip install -r requirements.txt
-        f) 7z e db_dump_sqlite.7z (in case 7z is not installed you can get it by pressing 'sudo apt-get install p7zip-full')
-        g) cd frontend
-        h) npm install (in case npm is not installed you can get it by pressing 'sudo apt install npm' or 'sudo apt install npm nodejs' )
-        i) cd ..
-        j) python manage.py runserver
-2. Windows:
-    Run following instructions in Windows CMD and make other steps:
-        a) git clone https://github.com/KacperMitkowski/Doctors
-        b) cd Doctors
-        c) py -m venv venv
-        d) .\venv\Scripts\activate
-        e) pip install -r requirements.txt
-        f) Then you need to extract db file 'db_dump_sqlite.7z' in the root folder (for example with the zip program)
-        g) cd frontend
-        h) npm install (in case npm is not installed you can download it from here 'https://phoenixnap.com/kb/install-node-js-npm-on-windows')
-        i) cd ..
-        j) python manage.py runserver
+
         
 When these steps are finished you press given URL in your browser and you should see the index page of my application.
 
