@@ -46,7 +46,7 @@ The user is in the same route for whole the time. The data are taken from db by 
                 <ol>
                     <li>git clone https://github.com/KacperMitkowski/Doctors</li>
                     <li>cd Doctors</li>
-                    <li>py -m venv venv (in case you don't have installed Python you can download it from here 'https://www.python.org/downloads/')</li>
+                    <li>py -m venv venv (in case you don't have Python installed you can download it from here 'https://www.python.org/downloads/')</li>
                     <li>.\venv\Scripts\activate</li>
                     <li>pip install -r requirements.txt</li>
                 </ol>
