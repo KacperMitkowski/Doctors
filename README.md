@@ -20,6 +20,7 @@ The user is in the same route for whole the time. The data are taken from db by 
 - React.js
 - Babel, Webpack
 - HTML, CSS, Bootstrap
+- PyCharm as IDE
 
 ## Loading data:
 - there are 2 options which you can choose:
@@ -46,8 +47,8 @@ The user is in the same route for whole the time. The data are taken from db by 
 
 ## Screenshots:
 Doctors Index page:
-![alt text](https://github.com/KacperMitkowski/Doctors/blob/master/screenshots/screenshot_1.PNG)
+<img src="screenshots/screenshot_1.PNG"/>
 Doctor Details page:
-![alt text](https://github.com/KacperMitkowski/Doctors/blob/master/screenshots/screenshot_2.PNG)
+<img src="screenshots/screenshot_2.PNG"/>
 Django admin page:
-![alt text](https://github.com/KacperMitkowski/Doctors/blob/master/screenshots/screenshot_3.PNG)
+<img src="screenshots/screenshot_3.PNG"/>
