@@ -22,7 +22,27 @@ The user is in the same route for whole the time. The data are taken from db by 
 - HTML, CSS, Bootstrap
 - PyCharm as IDE
 
-** Starting project **:
+## Starting project:
+<ol>
+    <li>
+        Linux -> Run following instructions in the terminal:
+        <ul>
+            <li>git clone https://github.com/KacperMitkowski/Doctors</li>
+            <li>cd Doctors</li>
+            <li>python3 -m venv venv</li>
+            <li>source venv/bin/activate</li>
+            <li>pip install -r requirements.txt</li>
+            <li>7z e db_dump_sqlite.7z (in case 7z is not installed you can get it by pressing 'sudo apt-get install p7zip-full')</li>
+            <li>cd frontend</li>
+            <li>npm install (in case npm is not installed you can get it by pressing 'sudo apt install npm' or 'sudo apt install npm nodejs' )</li>
+            <li>cd ..</li>
+            <li>python manage.py runserver</li>
+        </ul>
+    </li>
+    <li>
+        
+    </li>
+</ol>
 1. Linux:
     Run following instructions in Linux terminal:
         a) git clone https://github.com/KacperMitkowski/Doctors
