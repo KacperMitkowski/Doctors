@@ -25,7 +25,7 @@ The user is in the same route for whole the time. The data are taken from db by 
 ## Starting project:
 <ol>
     <li>
-        Linux -> Run following instructions in the terminal:
+        <b>Linux</b> -> Run following instructions in the terminal:
         <ul>
             <li>git clone https://github.com/KacperMitkowski/Doctors</li>
             <li>cd Doctors</li>
@@ -40,7 +40,7 @@ The user is in the same route for whole the time. The data are taken from db by 
         </ul>
     </li>
     <li>
-        Windows -> Make following steps in this order:
+        <b>Windows</b> -> Make following steps in this order:
         <ul>
             <li>
                 Run following instructions in Windows CMD
@@ -67,7 +67,7 @@ The user is in the same route for whole the time. The data are taken from db by 
 </ol>
 
         
-When these steps are finished you press given URL in your browser and you should see the index page of my application.
+When these steps are finished press given URL in your browser and you should see the index page of my application.
 
 ## Plans for the future:
 - add additional functionalities such as: search engine, ordering by pressing column name in index page
