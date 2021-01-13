@@ -22,20 +22,33 @@ The user is in the same route for whole the time. The data are taken from db by 
 - HTML, CSS, Bootstrap
 - PyCharm as IDE
 
-## Loading data:
-- there are 2 options which you can choose:
-  1. using csv files: 
-    - First you must unpack csv files enclosed in repo and place them in the root folder
-    - Prepare db by making necessary migrations (by python manage.py makemigrations -> python manage.py migrate)
-    - load data from csv to prepared db by triggering '/load_doctors_to_db_from_csv' and 'load_doctor_addresses_from_csv' urls (in this order). Be aware that this process may
-    last very long time (139387 records in doctors' table and 320152 in addresses' table)
-    - install necessary packages for frontend by npm: e.g. 'react', 'react-dom', 'style-loader', 'css-loader' etc.
-  2. using sqllite:
-    - First you must unpack sqlite file and place it in the roor folder
-    - Import db to your project
-    - install necessary packages for frontend by npm: e.g. 'react', 'react-dom', 'style-loader', 'css-loader' etc.
-    
-    (This files are packed due to the fact that github accepts 100 MB for each file)
+## Starting project:
+1. Linux:
+    Run following instructions in Linux terminal:
+        a) git clone https://github.com/KacperMitkowski/Doctors
+        b) cd Doctors
+        c) python3 -m venv venv
+        d) source venv/bin/activate
+        e) pip install -r requirements.txt
+        f) 7z e db_dump_sqlite.7z (in case 7z is not installed you can get it by pressing 'sudo apt-get install p7zip-full')
+        g) cd frontend
+        h) npm install (in case npm is not installed you can get it by pressing 'sudo apt install npm' or 'sudo apt install npm nodejs' )
+        i) cd ..
+        j) python manage.py runserver
+2. Windows:
+    Run following instructions in Windows CMD and make other steps:
+        a) git clone https://github.com/KacperMitkowski/Doctors
+        b) cd Doctors
+        c) py -m venv venv
+        d) .\venv\Scripts\activate
+        e) pip install -r requirements.txt
+        f) Then you need to extract db file 'db_dump_sqlite.7z' in the root folder (for example with the zip program)
+        g) cd frontend
+        h) npm install (in case npm is not installed you can download it from here 'https://phoenixnap.com/kb/install-node-js-npm-on-windows')
+        i) cd ..
+        j) python manage.py runserver
+        
+When these steps are finished you press given URL in your browser and you should see the index page of my application.
 
 ## Plans for the future:
 - add additional functionalities such as: search engine, ordering by pressing column name in index page
