@@ -22,7 +22,7 @@ The user is in the same route for whole the time. The data are taken from db by 
 - HTML, CSS, Bootstrap
 - PyCharm as IDE
 
-## Starting project:
+** Starting project **:
 1. Linux:
     Run following instructions in Linux terminal:
         a) git clone https://github.com/KacperMitkowski/Doctors
