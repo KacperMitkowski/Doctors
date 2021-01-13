@@ -1,6 +1,6 @@
 # Doctor and Doctor addresses in Python/Django and React
 
-This is simple application presenting information about doctors and medical institutions on the base of data taken from 'https://rpwdl.ezdrowie.gov.pl/'
+This is simple application presenting information about doctors and medical institutions on the base of data taken from 'https://rpwdl.ezdrowie.gov.pl/'. I used PyCharm as IDE.
 
 ## About the project
 
@@ -20,7 +20,6 @@ The user is in the same route for whole the time. The data are taken from db by 
 - React.js
 - Babel, Webpack
 - HTML, CSS, Bootstrap
-- PyCharm as IDE
 
 ## Starting project:
 <ol>
